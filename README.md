@@ -16,6 +16,8 @@ This project is made with Vue CLI and the following libaries and API:
 - [PokéAPI](https://pokeapi.co/)
 - [Persisted Vuex state](https://github.com/robinvdvleuten/vuex-persistedstate)
 
+Test
+
 ## Project setup
 ```
 npm install
