@@ -5,7 +5,7 @@ import createPersistedState from 'vuex-persistedstate'
 Vue.use(Vuex)
 
 const LOCAL_STORAGE_PKM_NAMES = 'favoritePokemonNames'
-const LOCAL_STORAGE_USER = 'userLoggedIn'
+
 
 const store = new Vuex.Store({
     plugins: [createPersistedState({
@@ -14,12 +14,9 @@ const store = new Vuex.Store({
     state: {
         statePokemonDataList: [],
         stateFavoritePokemonList: [],
-        loggedIn: false,
+        
     },
     actions: {
-        setUserLoggedIn(context) {
-            context.commit('setUserLoggedIn')
-        },
         setPokemonData(context, payload) {
             context.commit('setPokemonData', payload)
         },
@@ -37,9 +34,6 @@ const store = new Vuex.Store({
         },
     },
     mutations: {
-        setUserLoggedIn(state) {
-            state.loggedIn = true
-        },
         setPokemonData(state, list) {
             state.statePokemonDataList = list
         },
