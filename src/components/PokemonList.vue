@@ -29,7 +29,7 @@
         class="nes-btn"
         :class="{ 'is-disabled': favoriteListLength === 10 }"
         @click="setFavorites(pokemon.name), playPokemonCry(index + 1)"
-      >Pick me!</a>
+      >Select</a>
       <button
         v-show="favorites.includes(pokemon.name)"
         class="nes-btn is-error"

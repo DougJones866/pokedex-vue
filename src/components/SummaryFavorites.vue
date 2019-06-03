@@ -1,12 +1,12 @@
 <template>
   <div>
-    <h2>Your chosen favorite Pokémon</h2>
+    <h2>Your chosen Pokémon</h2>
     <p v-if="favoriteListLength < maximumList">
-      I can't choose, help me <button
+       <button
         class="nes-btn is-success"
         @click="startInterval"
       >
-        Pick Pokémon
+        Randomly Select
       </button>
     </p>
     <template>
