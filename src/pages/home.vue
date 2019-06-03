@@ -1,22 +1,20 @@
 <template>
   <div class="select-pokemon-page">
-    <img
-      src="./../assets/logo-pixel.gif"
-      alt="pokémon"
-    >
+    <img src="./../assets/logo-pixel.gif" alt="pokémon">
+
     <div class="select-pokemon-content">
       <pokemon-list
         :pokemon-list="statePokemonDataList"
         :favorites="stateFavoritePokemonList"
         @deleteFavorite="deleteFavorite"
-        @addFavorite="addFavorite"
-      />
+        @addFavorite="addFavorite"/>
+
       <summary-favorites
         :pokemon-list="statePokemonDataList"
         :favorites="stateFavoritePokemonList"
         @addFavorite="addFavorite"
-        @eraseFavoritePokemonList="eraseFavoritePokemonList"
-      />
+        @eraseFavoritePokemonList="eraseFavoritePokemonList"/>
+        
     </div>
   </div>
 </template>
@@ -46,7 +44,12 @@ export default {
             const json = await data.json()
             return json.results
         },
-        ...mapActions(['setPokemonData', 'addFavorite', 'deleteFavorite', 'eraseFavoritePokemonList']),
+        ...mapActions([
+            'setPokemonData',
+            'addFavorite',
+            'deleteFavorite',
+            'eraseFavoritePokemonList',
+        ]),
     },
 }
 </script>
@@ -54,12 +57,15 @@ export default {
 <style scoped>
 .select-pokemon-page {
     text-align: center;
+    
 }
+
 
 .select-pokemon-content {
     text-align: left;
     display: flex;
     justify-content: space-evenly;
+    
 }
 </style>
 

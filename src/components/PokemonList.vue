@@ -86,7 +86,9 @@ export default {
 }
 
 .pokemon-list-item {
-    display: flex;
-    align-items: center;
+    display: grid;
+    float: left;
+    margin: 5px;
+    
 }
 </style>

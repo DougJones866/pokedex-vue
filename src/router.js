@@ -3,7 +3,7 @@ import VueRouter from 'vue-router'
 import Home from './pages/home'
 import store from './store'
 
-// lazy load route
+
 const Favorites = () => import('./pages/favorites')
 
 Vue.use(VueRouter)

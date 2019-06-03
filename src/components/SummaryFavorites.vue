@@ -100,5 +100,6 @@
 <style scoped>
 .chosen-pokemon {
     text-transform: capitalize;
+    
 }
 </style>
