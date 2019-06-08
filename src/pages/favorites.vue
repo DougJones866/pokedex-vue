@@ -1,7 +1,7 @@
 <template>
   <div>
     <h1 class="overview-favorite-pokemon__title">
-      Your favorite Pokémon
+      Selected Pokemon
     </h1>
     <router-link
       class="nes-btn"
@@ -36,6 +36,11 @@ import PokemonCard from '@/components/PokemonCard'
 </script>
 
 <style scoped>
+h1 {
+  font-family: '8BITWONDERNominal'; 
+   font-weight: normal; 
+   font-style: normal;
+}
 .overview-favorite-pokemon {
     display: grid;
     grid-template-columns: 1fr 1fr;

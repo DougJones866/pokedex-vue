@@ -1,22 +1,15 @@
 <template>
   <div class="pokemon-list">
-    <h2>Choose your Pokémon</h2>
+    <h2>Choose your Pokemon</h2>
     <p
       v-for="(pokemon, index) in pokemonList"
       :key="pokemon.url"
       class="pokemon-list-item"
     >
       {{ index + 1 + '. ' }}
-      <i
-        v-if="favorites.includes(pokemon.name)"
-        class="nes-icon is-small heart"
-      />
-      <i
-        v-else
-        class="nes-icon is-small heart is-empty"
-      />
+      
       {{ pokemon.name }}
-      <img
+      <img 
         :key="pokemon.url"
         :src="
           `https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/${index +
@@ -27,7 +20,7 @@
       <a
         v-show="!favorites.includes(pokemon.name)"
         class="nes-btn"
-        :class="{ 'is-disabled': favoriteListLength === 10 }"
+        :class="{ 'is-disabled': favoriteListLength === 6 }"
         @click="setFavorites(pokemon.name), playPokemonCry(index + 1)"
       >Select</a>
       <button
@@ -81,14 +74,21 @@ export default {
 </script>
 
 <style scoped>
+h2 {
+
+  
+}
 .pokemon-list {
     text-transform: capitalize;
+    
+    
 }
 
 .pokemon-list-item {
-    display: grid;
+    display: grid ; 
     float: left;
-    margin: 5px;
+    margin: 15px;
     
 }
+
 </style>

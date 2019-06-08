@@ -1,12 +1,12 @@
 <template>
   <div>
-    <h2>Your chosen Pokémon</h2>
+    <h2>Your chosen Pokemon</h2>
     <p v-if="favoriteListLength < maximumList">
        <button
         class="nes-btn is-success"
         @click="startInterval"
       >
-        Randomly Select
+        Random
       </button>
     </p>
     <template>
@@ -25,23 +25,23 @@
     <p v-if="favoriteListLength > 1 && favoriteListLength < maximumList">
       You can add {{ maximumList - favoriteListLength }} more Pokémon
     </p>
-    <p v-if="favoriteListLength > 9">
+    <p v-if="favoriteListLength > 6">
       Your list is full!
     </p>
-    <p v-if="favoriteListLength > 9">
-      Do you want to <button
+    <p v-if="favoriteListLength > 0">
+            <button
         class="nes-btn is-error"
         @click="emptyFavoritePokemonList"
       >
-        Delete
-      </button> the list?
+        Empty
+      </button>
     </p>
     <router-link
       v-if="favoriteListLength > 0"
       class="nes-btn"
       to="/favorites"
     >
-      View your favorite Pokémon
+      View Selection
     </router-link>
   </div>
 </template>
@@ -61,7 +61,7 @@
         },
         data: function() {
             return {
-                maximumList: 10
+                maximumList: 6
             }
         },
         computed: {
@@ -102,4 +102,9 @@
     text-transform: capitalize;
     
 }
+.nes-btn{
+  
+
+}
+
 </style>

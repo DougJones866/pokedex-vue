@@ -54,9 +54,12 @@ export default {
 }
 </script>
 
-<style scoped>
+<style>
 .select-pokemon-page {
     text-align: center;
+    font-family: '8BITWONDERNominal'; 
+   font-weight: normal; 
+   font-style: normal;
     
 }
 
@@ -66,6 +69,8 @@ export default {
     display: flex;
     justify-content: space-evenly;
     
+    
+  
 }
 </style>
 
