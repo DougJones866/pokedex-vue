@@ -36,6 +36,7 @@ import PokemonCard from '@/components/PokemonCard'
 </script>
 
 <style scoped>
+
 h1 {
   font-family: '8BITWONDERNominal'; 
    font-weight: normal; 
@@ -44,10 +45,12 @@ h1 {
 .overview-favorite-pokemon {
     display: grid;
     grid-template-columns: 1fr 1fr;
+    
 }
 
 .overview-favorite-pokemon__title {
   margin-top: 10px;
   text-align: center;
+  
 }
 </style>

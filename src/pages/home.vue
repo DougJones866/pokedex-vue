@@ -55,6 +55,12 @@ export default {
 </script>
 
 <style>
+.nes-btn {
+  
+  border: 1px;
+  
+}
+
 .select-pokemon-page {
     text-align: center;
     font-family: '8BITWONDERNominal'; 
@@ -68,7 +74,7 @@ export default {
     text-align: left;
     display: flex;
     justify-content: space-evenly;
-    
+    background-color: #cfd8ec;
     
   
 }

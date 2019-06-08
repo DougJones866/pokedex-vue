@@ -74,12 +74,10 @@ export default {
 </script>
 
 <style scoped>
-h2 {
 
-  
-}
 .pokemon-list {
     text-transform: capitalize;
+  
     
     
 }
