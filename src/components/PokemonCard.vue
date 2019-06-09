@@ -1,24 +1,23 @@
 <template>
-  <div v-if="pokemonData && pokemonDescription" class="pokemon-card nes-container is-rounded">
-    <div class="pokemon-card__image">
-      <img
-        :src="`https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/${pokemonData.id}.png`"
-        :alt="pokemonData.name"
-      >
+  <transition name="fade">
+    <div v-if="pokemonData && pokemonDescription" class="pokemon-card nes-container is-rounded">
+        <div class="pokemon-card__image">
+        <img :src="`https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/${pokemonData.id}.png`" :alt="pokemonData.name">
+        </div>
+        <div class="pokemon-card__text">
+        <p>Name: {{ pokemonData.name }}</p>
+        <p>No. {{ pokemonData.id }}</p>
+        <p>
+            Type:
+            <span
+            v-for="(typesOfPokemon, index) in pokemonData.types"
+            :key="`type${index}`"
+            >{{ typesOfPokemon.type.name }}</span>
+        </p>
+        <p>{{ pokemonDescription[0].flavor_text }}</p>
+        </div>
     </div>
-    <div class="pokemon-card__text">
-      <p>Name: {{ pokemonData.name }}</p>
-      <p>No. {{ pokemonData.id }}</p>
-      <p>
-        Type:
-        <span
-          v-for="(typesOfPokemon, index) in pokemonData.types"
-          :key="`type${index}`"
-        >{{ typesOfPokemon.type.name }}</span>
-      </p>
-      <p>{{ pokemonDescription[0].flavor_text }}</p>
-    </div>
-  </div>
+  </transition>  
 </template>
 
 <script>
@@ -66,6 +65,13 @@ export default {
 </script>
 
 <style scoped>
+.fade-enter-active, .fade-leave-active {
+  transition: opacity .5s;
+}
+.fade-enter, .fade-leave-to /* .fade-leave-active below version 2.1.8 */ {
+  opacity: 0;
+}
+
 .pokemon-card {
     display: flex;
     align-items: center;
@@ -74,5 +80,6 @@ export default {
     font-family: '8BITWONDERNominal';
     font-weight: normal;
     font-style: normal;
+    border: 2px;
 }
 </style>

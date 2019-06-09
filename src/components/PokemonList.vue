@@ -1,35 +1,25 @@
 <template>
   <div class="pokemon-list">
     <h2>Choose your Pokemon</h2>
-    <p
-      v-for="(pokemon, index) in pokemonList"
-      :key="pokemon.url"
-      class="pokemon-list-item"
-    >
-      {{ index + 1 + '. ' }}
-      
-      {{ pokemon.name }}
-      <img 
-        :key="pokemon.url"
-        :src="
-          `https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/${index +
-            1}.png`
-        "
-        alt="Pokemon`"
-      >
+    <p v-for="(pokemon, index) in pokemonList" :key="pokemon.url" class="pokemon-list-item">
+
       <a
         v-show="!favorites.includes(pokemon.name)"
         class="nes-btn"
         :class="{ 'is-disabled': favoriteListLength === 6 }"
-        @click="setFavorites(pokemon.name), playPokemonCry(index + 1)"
-      >Select</a>
+        @click="setFavorites(pokemon.name)"
+      >{{ index + 1 + '. ' }} {{ pokemon.name }}</a>
+
       <button
         v-show="favorites.includes(pokemon.name)"
         class="nes-btn is-error"
-        @click="setFavorites(pokemon.name), playPokemonCry(index + 1)"
-      >
-        Remove
-      </button>
+        @click="setFavorites(pokemon.name)"
+      >Remove</button>
+
+      <img
+        :key="pokemon.url"
+        :src="`https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/${index +1}.png` "
+        alt="Pokemon`" >
     </p>
   </div>
 </template>
@@ -63,12 +53,6 @@ export default {
                 this.$emit('addFavorite', name)
             }
         },
-        playPokemonCry(pokemonId) {
-            const audio = new Audio(
-                `https://pokemoncries.com/cries-old/${pokemonId}.mp3`
-            )
-            audio.play()
-        }
     },
 }
 </script>
@@ -77,16 +61,11 @@ export default {
 
 .pokemon-list {
     text-transform: capitalize;
-  
-    
-    
 }
 
 .pokemon-list-item {
-    display: grid ; 
+    display: grid;
     float: left;
     margin: 15px;
-    
 }
-
 </style>

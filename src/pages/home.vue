@@ -39,7 +39,7 @@ export default {
     methods: {
         async getPokemonData() {
             const data = await fetch(
-                'https://pokeapi.co/api/v2/pokemon?limit=251'
+                'https://pokeapi.co/api/v2/pokemon?limit=807'
             )
             const json = await data.json()
             return json.results
