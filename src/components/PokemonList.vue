@@ -2,7 +2,7 @@
   
   <div class="pokemon-list">
     <h2>Select up to six pokemon</h2>
-    <h6>Credit <a href="https://github.com/littlemousey">Littlemousey</a></h6>
+    
     <p v-for="(pokemon, index) in pokemonList" :key="pokemon.url" class="pokemon-list-item">
       <a
         v-show="!favorites.includes(pokemon.name)"
